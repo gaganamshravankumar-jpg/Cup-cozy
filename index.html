@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cup & Cozy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="glass">
+  <h1>Cup & Cozy ☕</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="glass hero-box">
+    <h2>Premium Coffee Experience</h2>
+    <p>Relax. Sip. Enjoy the vibe ✨</p>
+    <button onclick="scrollToMenu()">Explore Menu</button>
+  </div>
+</section>
+
+<!-- CART -->
+<section id="cart">
+  <h2>🛒 Your Cart</h2>
+  <div id="cartItems"></div>
+  <h3>Total: ₹<span id="total">0</span></h3>
+  <button onclick="sendWhatsAppOrder()">Order on WhatsApp</button>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <h2>Our Menu</h2>
+
+  <!-- CATEGORY CARDS -->
+  <div class="menu-categories">
+
+<div class="category-card" onclick="showItems('pizzas')">
+  <img src="pizza.jpg"><p>Pizzas</p>
+</div>
+
+<div class="category-card" onclick="showItems('vegpizzas')">
+  <img src="veg-pizza.jpg"><p>Veg Pizza</p>
+</div>
+
+<div class="category-card" onclick="showItems('burgers')">
+  <img src="chicken-burger.jpg"><p>Burgers</p>
+</div>
+
+<div class="category-card" onclick="showItems('vegburgers')">
+  <img src="veg-burger.jpg"><p>Veg Burgers</p>
+</div>
+
+    <div class="category-card" onclick="showItems('sandwich')">
+      <img src="chicken-sandwich.jpg"><p>Sandwich</p>
+    </div>
+
+    <div class="category-card" onclick="showItems('vegsandwich')">
+      <img src="veg-sandwich.jpg"><p>Vegsandwich</p>
+    </div>
+
+    <div class="category-card" onclick="showItems('pasta')">
+      <img src="pasta.jpg"><p>Pasta</p>
+    </div>
+
+    <div class="category-card" onclick="showItems('fries')">
+      <img src="french-fries.jpg"><p>Fries</p>
+    </div>
+
+    <div class="category-card" onclick="showItems('mojitos')">
+      <img src="mojitos.jpg"><p>Mojitos</p>
+    </div>
+
+    <div class="category-card" onclick="showItems('milkshakes')">
+      <img src="milk-shake.jpg"><p>Milkshakes</p>
+    </div>
+
+    <div class="category-card" onclick="showItems('lassi')">
+      <img src="lassi.jpg"><p>Lassi</p>
+    </div>
+
+    <div class="category-card" onclick="showItems('momos')">
+      <img src="momos.jpg"><p>Momos</p>
+    </div>
+
+    <div class="category-card" onclick="showItems('fried')">
+      <img src="fried-chicken.jpg"><p>Fried Chicken</p>
+    </div>
+
+    <div class="category-card" onclick="showItems('coffee')">
+      <img src="coffee.jpg"><p>Coffee</p>
+    </div>
+
+    <div class="category-card" onclick="showItems('hotmeltings')">
+      <img src="hot-meltings.jpg"><p>Hot Meltings</p>
+    </div>
+
+    <div class="category-card" onclick="showItems('icecream')">
+      <img src="ice-cream.jpg"><p>Ice Cream</p>
+    </div>
+
+  </div> <!-- ✅ CLOSED -->
+
+  <!-- ITEMS -->
+  <div class="menu-items">
+
+    <button class="back-btn" onclick="backToCategories()">← Back</button>
+
+<!-- PIZZAS -->
+<div class="card pizzas">
+  <p>Classic Chicken Pizza ₹249</p>
+  <button onclick="addToCart('Classic Chicken Pizza',249)">Add</button>
+</div>
+
+<div class="card pizzas">
+  <p>Chicken Margherita ₹229</p>
+  <button onclick="addToCart('Chicken Margherita',229)">Add</button>
+</div>
+
+<div class="card pizzas">
+  <p>Italian Chicken Pizza ₹269</p>
+  <button onclick="addToCart('Italian Chicken Pizza',269)">Add</button>
+</div>
+
+<div class="card pizzas">
+  <p>Mexican Chicken Pizza ₹279</p>
+  <button onclick="addToCart('Mexican Chicken Pizza',279)">Add</button>
+</div>
+
+
+<!-- VEG PIZZAS -->
+<div class="card vegpizzas">
+  <p>Classic Veg Pizza ₹199</p>
+  <button onclick="addToCart('Classic Veg Pizza',199)">Add</button>
+</div>
+
+<div class="card vegpizzas">
+  <p>Veg Margherita ₹219</p>
+  <button onclick="addToCart('Veg Margherita',219)">Add</button>
+</div>
+
+<div class="card vegpizzas">
+  <p>Spicy Paneer Pizza ₹239</p>
+  <button onclick="addToCart('Spicy Paneer Pizza',239)">Add</button>
+</div>
+
+<div class="card vegpizzas">
+  <p>Cheese & Corn Pizza ₹229</p>
+  <button onclick="addToCart('Cheese & Corn Pizza',229)">Add</button>
+</div>
+
+
+<!-- VEG BURGERS -->
+<div class="card vegburgers">
+  <p>Paneer Burger ₹129</p>
+  <button onclick="addToCart('Paneer Burger',129)">Add</button>
+</div>
+
+<div class="card vegburgers">
+  <p>Veg Burger ₹99</p>
+  <button onclick="addToCart('Veg Burger',99)">Add</button>
+</div>
+
+<div class="card vegburgers">
+  <p>Schezwan Veg Burger ₹119</p>
+  <button onclick="addToCart('Schezwan Veg Burger',119)">Add</button>
+</div>
+
+
+<!-- CHICKEN BURGERS -->
+<div class="card burgers">
+  <p>Chicken Crispy Burger ₹149</p>
+  <button onclick="addToCart('Chicken Crispy Burger',149)">Add</button>
+</div>
+
+<div class="card burgers">
+  <p>Schezwan Chicken Burger ₹159</p>
+  <button onclick="addToCart('Schezwan Chicken Burger',159)">Add</button>
+</div>
+
+<!-- SANDWICH -->
+<div class="card sandwich"><p>Chicken Grilled Sandwich ₹149</p><button onclick="addToCart('Chicken Sandwich',149)">Add</button></div>
+
+<!-- VEG SANDWICH -->
+<div class="card vegsandwich"><p>Veg Grilled Sandwich ₹119</p><button onclick="addToCart('Veg Sandwich',119)">Add</button></div>
+<div class="card vegsandwich"><p>Paneer Grilled Sandwich ₹139</p><button onclick="addToCart('Paneer Sandwich',139)">Add</button></div>
+<div class="card vegsandwich"><p>Sweet Corn Sandwich ₹129</p><button onclick="addToCart('Corn Sandwich',129)">Add</button></div>
+<div class="card vegsandwich"><p>Chocolate Sandwich ₹149</p><button onclick="addToCart('Chocolate Sandwich',149)">Add</button></div>
+
+<!-- PASTA -->
+<div class="card pasta"><p>White Sauce Pasta ₹179</p><button onclick="addToCart('White Pasta',179)">Add</button></div>
+<div class="card pasta"><p>Red Sauce Pasta ₹169</p><button onclick="addToCart('Red Pasta',169)">Add</button></div>
+<div class="card pasta"><p>Schezwan Chicken Pasta ₹199</p><button onclick="addToCart('Schezwan Pasta',199)">Add</button></div>
+<div class="card pasta"><p>Chicken Alzardo Pasta ₹219</p><button onclick="addToCart('Alzardo Pasta',219)">Add</button></div>
+<div class="card pasta"><p>Veg Loaded Pasta ₹189</p><button onclick="addToCart('Veg Pasta',189)">Add</button></div>
+
+<!-- FRIES -->
+<div class="card fries"><p>Classic Fries ₹99</p><button onclick="addToCart('Fries',99)">Add</button></div>
+<div class="card fries"><p>Peri Peri Fries ₹119</p><button onclick="addToCart('Peri Fries',119)">Add</button></div>
+<div class="card fries"><p>Masala Fries ₹129</p><button onclick="addToCart('Masala Fries',129)">Add</button></div>
+<div class="card fries"><p>Loaded Fries ₹149</p><button onclick="addToCart('Loaded Fries',149)">Add</button></div>
+
+<!-- MOJITOS -->
+<div class="card mojitos"><p>Virgin Mojito ₹129</p><button onclick="addToCart('Virgin Mojito',129)">Add</button></div>
+<div class="card mojitos"><p>Blue Berry Mojito ₹149</p><button onclick="addToCart('Blue Berry Mojito',149)">Add</button></div>
+<div class="card mojitos"><p>Lime Mint Mojito ₹139</p><button onclick="addToCart('Lime Mojito',139)">Add</button></div>
+<div class="card mojitos"><p>Blue Curacao Mojito ₹159</p><button onclick="addToCart('Blue Mojito',159)">Add</button></div>
+<div class="card mojitos"><p>Black Currant Mojito ₹149</p><button onclick="addToCart('Currant Mojito',149)">Add</button></div>
+<div class="card mojitos"><p>Green Apple Mojito ₹149</p><button onclick="addToCart('Apple Mojito',149)">Add</button></div>
+<div class="card mojitos"><p>Strawberry Mojito ₹149</p><button onclick="addToCart('Strawberry Mojito',149)">Add</button></div>
+
+<!-- MILKSHAKES -->
+<div class="card milkshakes"><p>Oreo Milkshake ₹159</p><button onclick="addToCart('Oreo Shake',159)">Add</button></div>
+<div class="card milkshakes"><p>Chocolate Milkshake ₹149</p><button onclick="addToCart('Chocolate Shake',149)">Add</button></div>
+<div class="card milkshakes"><p>Double Choco Chips ₹169</p><button onclick="addToCart('Choco Chips Shake',169)">Add</button></div>
+<div class="card milkshakes"><p>Vanilla Milkshake ₹139</p><button onclick="addToCart('Vanilla Shake',139)">Add</button></div>
+<div class="card milkshakes"><p>Strawberry Milkshake ₹149</p><button onclick="addToCart('Strawberry Shake',149)">Add</button></div>
+<div class="card milkshakes"><p>Butterscotch Milkshake ₹149</p><button onclick="addToCart('Butterscotch Shake',149)">Add</button></div>
+<div class="card milkshakes"><p>KitKat Milkshake ₹169</p><button onclick="addToCart('KitKat Shake',169)">Add</button></div>
+<div class="card milkshakes"><p>Mango Milkshake ₹139</p><button onclick="addToCart('Mango Shake',139)">Add</button></div>
+<div class="card milkshakes"><p>Black Currant Milkshake ₹149</p><button onclick="addToCart('Currant Shake',149)">Add</button></div>
+
+<!-- LASSI -->
+<div class="card lassi"><p>Rose Lassi ₹99</p><button onclick="addToCart('Rose Lassi',99)">Add</button></div>
+<div class="card lassi"><p>Sweet Lassi ₹99</p><button onclick="addToCart('Sweet Lassi',99)">Add</button></div>
+<div class="card lassi"><p>Mango Lassi ₹119</p><button onclick="addToCart('Mango Lassi',119)">Add</button></div>
+<div class="card lassi"><p>Strawberry Lassi ₹119</p><button onclick="addToCart('Strawberry Lassi',119)">Add</button></div>
+<div class="card lassi"><p>Rose Milk ₹89</p><button onclick="addToCart('Rose Milk',89)">Add</button></div>
+
+<!-- MOMOS -->
+<div class="card momos"><p>Chicken Momos ₹129</p><button onclick="addToCart('Chicken Momos',129)">Add</button></div>
+<div class="card momos"><p>Veg Momos ₹109</p><button onclick="addToCart('Veg Momos',109)">Add</button></div>
+<div class="card momos"><p>Schezwan Momos ₹139</p><button onclick="addToCart('Schezwan Momos',139)">Add</button></div>
+
+<!-- FRIED CHICKEN -->
+<div class="card fried"><p>Chicken Wings ₹199</p><button onclick="addToCart('Wings',199)">Add</button></div>
+<div class="card fried"><p>Drumsticks ₹219</p><button onclick="addToCart('Drumsticks',219)">Add</button></div>
+<div class="card fried"><p>Chicken Popcorn ₹179</p><button onclick="addToCart('Popcorn',179)">Add</button></div>
+<div class="card fried"><p>Breast Strips ₹199</p><button onclick="addToCart('Strips',199)">Add</button></div>
+<div class="card fried"><p>Lollipops ₹189</p><button onclick="addToCart('Lollipops',189)">Add</button></div>
+<div class="card fried"><p>Chicken Rings ₹169</p><button onclick="addToCart('Rings',169)">Add</button></div>
+<div class="card fried"><p>Cheese Balls ₹179</p><button onclick="addToCart('Cheese Balls',179)">Add</button></div>
+
+<!-- COFFEE -->
+<div class="card coffee"><p>Classic Cold Coffee ₹129</p><button onclick="addToCart('Cold Coffee',129)">Add</button></div>
+<div class="card coffee"><p>Choco Chips Coffee ₹149</p><button onclick="addToCart('Choco Coffee',149)">Add</button></div>
+<div class="card coffee"><p>Chocolate Coffee ₹149</p><button onclick="addToCart('Chocolate Coffee',149)">Add</button></div>
+
+<!-- HOT MELTINGS -->
+<div class="card hotmeltings"><p>Brownie Choco Chips ₹149</p><button onclick="addToCart('Brownie',149)">Add</button></div>
+<div class="card hotmeltings"><p>Choco Lava ₹129</p><button onclick="addToCart('Choco Lava',129)">Add</button></div>
+
+<!-- ICE CREAM -->
+<div class="card icecream"><p>Black Currant ₹79</p><button onclick="addToCart('Black Currant',79)">Add</button></div>
+<div class="card icecream"><p>Vanilla ₹79</p><button onclick="addToCart('Vanilla',79)">Add</button></div>
+<div class="card icecream"><p>Butterscotch ₹89</p><button onclick="addToCart('Butterscotch',89)">Add</button></div>
+<div class="card icecream"><p>Strawberry ₹89</p><button onclick="addToCart('Strawberry',89)">Add</button></div>
+<div class="card icecream"><p>Mango ₹89</p><button onclick="addToCart('Mango',89)">Add</button></div>
+<div class="card icecream"><p>Chocolate ₹99</p><button onclick="addToCart('Chocolate',99)">Add</button></div>
+  </div>
+
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <h2>Our Cafe</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=400">
+    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400">
+    <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=400">
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Visit Us</h2>
+<div class="map glass">
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.117660241936!2d78.5534978737705!3d17.406140202267405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99004db60523%3A0xd25544ab30a2bbf2!2sCup%20%26%20Cozy!5e0!3m2!1sen!2sin!4v1775484205674!5m2!1sen!2sin"
+    width="100%" 
+    height="300" 
+    style="border:0; border-radius:10px;"
+    allowfullscreen=""
+    loading="lazy">
+  </iframe>
+</div>
+  <p>📍 Cup & Cozy, Beside Pista house uppal 500039, Hyderabad</p>
+  <p>📞 7036862981</p>
+</section>
+
+<!-- FOOTER -->
+<footer class="glass">
+  <p>© 2026 Cup & Cozy</p>
+</footer>
+
+<script src="script.js"></script>
+
+<!-- TOAST -->
+<div id="toast">Added to cart ✅</div>
+
+</body>
+</html>

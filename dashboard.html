@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Owner Dashboard</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #111;
+      color: white;
+      padding: 20px;
+    }
+
+```
+h1 {
+  text-align: center;
+}
+
+.order {
+  background: rgba(255,255,255,0.1);
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+button {
+  padding: 10px;
+  background: orange;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+```
+
+  </style>
+</head>
+<body>
+
+<h1>📊 Cafe Owner Dashboard</h1>
+
+<div id="orders"></div>
+
+<button onclick="clearOrders()">Clear Orders</button>
+
+<script>
+let orders = JSON.parse(localStorage.getItem('orders')) || [];
+
+function showOrders() {
+  const container = document.getElementById('orders');
+  container.innerHTML = "";
+
+  orders.forEach((order, index) => {
+    const div = document.createElement('div');
+    div.classList.add('order');
+
+    div.innerHTML = `
+      <p><b>Order ${index + 1}</b></p>
+      <p>${order}</p>
+    `;
+
+    container.appendChild(div);
+  });
+}
+
+function clearOrders() {
+  localStorage.removeItem('orders');
+  orders = [];
+  showOrders();
+}
+
+showOrders();
+</script>
+
+</body>
+</html>

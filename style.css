@@ -1,0 +1,337 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #1a1a1a;
+  color: white;
+}
+
+/* Glass Effect */
+.glass {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: 0.3s;
+}
+
+.glass:hover {
+  box-shadow: 0 0 15px rgba(255,255,255,0.2);
+  transform: translateY(-5px);
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav a {
+  color: white;
+  margin: 10px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #ff7043;
+}
+
+/* Hero */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-box {
+  padding: 40px;
+  text-align: center;
+}
+
+.hero-box h2 {
+  animation: fadeUp 1s ease;
+}
+
+.hero-box p {
+  animation: fadeUp 1.5s ease;
+}
+
+/* Buttons */
+button {
+  padding: 10px 20px;
+  background: #ff7043;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #ff5722;
+  box-shadow: 0 0 10px rgba(255, 87, 34, 0.8);
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Sections */
+section {
+  padding: 50px;
+  text-align: center;
+}
+
+section h2 {
+  margin-bottom: 25px;
+}
+
+#menu {
+  scroll-margin-top: 120px;
+}
+
+/* Tabs */
+.menu-tabs {
+  margin-bottom: 20px;
+}
+
+.menu-tabs button {
+  margin: 5px;
+}
+
+.menu-tabs button.active {
+  background: #ff7043;
+  box-shadow: 0 0 10px rgba(255,112,67,0.7);
+}
+
+/* Menu Grid */
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+/* Hide items initially */
+.menu-items .card {
+  display: none;
+}
+
+/* Hide menu items container at start */
+.menu-items {
+  display: none;
+  gap: 15px;
+}
+
+/* Back button */
+.back-btn {
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  background: #ff7043;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  background: #ff5722;
+}
+
+/* ==================== CATEGORY CARDS ==================== */
+.menu-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.category-card {
+  text-align: center;
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.category-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.category-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255,112,67,0.6);
+}
+
+/* Card */
+.card {
+  padding: 15px;
+  transition: all 0.4s ease;
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.6),
+              0 0 20px rgba(255, 87, 34, 0.7);
+}
+
+/* Gallery */
+.gallery {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gallery img {
+  width: 250px;
+  max-width: 90%;
+}
+
+/* Map */
+.map {
+  width: 80%;
+  margin: auto;
+  padding: 10px;
+}
+
+/* Footer */
+footer {
+text-align: center;
+padding: 10px;
+}
+
+/* Cart */
+#cartItems {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background: rgba(255,255,255,0.1);
+  padding: 10px;
+  border-radius: 10px;
+  gap: 10px;
+}
+
+/* Hide all menu initially */
+/* Default show PIZZAS */
+.menu-items .PIZZAS {
+  display: block;
+}
+
+/* fallback if JS fails */
+.no-js .menu-items .card {
+  display: block;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff7043;
+  border-radius: 10px;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 5px;
+  }
+
+  .hero-box {
+    padding: 20px;
+  }
+
+  .hero-box h2 {
+    font-size: 22px;
+  }
+
+  .menu-tabs button {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+#toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #ff7043;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: 0.4s ease;
+  z-index: 9999;
+}
+
+#toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
